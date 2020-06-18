@@ -1,10 +1,10 @@
 package com.paul.server.instantchat.controller;
 
 import com.paul.server.instantchat.entity.MessageBean;
-import com.paul.server.instantchat.entity.User;
 import com.paul.server.instantchat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,8 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
     @Autowired
     UserService userService;
-    @RequestMapping("/test")
-    public MessageBean getUser(){
-        return new MessageBean(1,userService.getUser());
+
+    @RequestMapping("user/login")
+    public MessageBean login(String phoneNumber,String password){
+        return userService.login(phoneNumber, password);
     }
+
+    @PostMapping("user/register")
+    public MessageBean register(){
+        return null;
+    }
+
 }

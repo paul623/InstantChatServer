@@ -16,6 +16,6 @@ public interface UserMapper {
     @Insert("insert into user(phoneNumber,password,registerDate,loginDate) values(#{phoneNumber},#{password},#{registerDate},#{loginDate}) ")
     public int addUser(String phoneNumber, String password, Date registerDate, Date loginDate);
 
-    @Update("update user set loginDate = #{loginDate}")
-    public int updateLoginDate(Date loginDate);
+    @Update("update user set loginDate = #{loginDate} where phoneNumber=#{phoneNumber}")
+    public int updateLoginDate(String phoneNumber,Date loginDate);
 }
