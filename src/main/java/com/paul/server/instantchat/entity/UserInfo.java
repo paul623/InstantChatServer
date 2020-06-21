@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class UserInfo implements Serializable {
     int id;
+    String name;
     String sex;
     Date birth;
     String sign;
@@ -48,5 +49,13 @@ public class UserInfo implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -7,7 +7,16 @@ public class Friend implements Serializable {
     int id;
     int userId;
     int friendId;
+    String friendName;
     Date CombineDate;
+
+    public String getFriendName() {
+        return friendName;
+    }
+
+    public void setFriendName(String friendName) {
+        this.friendName = friendName;
+    }
 
     public int getId() {
         return id;

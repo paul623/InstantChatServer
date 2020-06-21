@@ -20,8 +20,8 @@ public class UserController {
     }
 
     @PostMapping("user/register")
-    public MessageBean register(){
-        return null;
+    public MessageBean register(String phoneNumber,String password,String name,String sex,String birth,String sign,String email){
+        return userService.register(phoneNumber, password, name, sex, birth, sign, email);
     }
 
 }
