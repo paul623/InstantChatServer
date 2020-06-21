@@ -19,4 +19,8 @@ public class UserInfoService {
         }
         return new MessageBean(1,"成功",userInfo);
     }
+
+    public String getUserName(int uid){
+        return userInfoMapper.getUserNameById(uid);
+    }
 }

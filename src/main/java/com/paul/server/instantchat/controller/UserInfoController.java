@@ -18,4 +18,9 @@ public class UserInfoController {
     public MessageBean getUserInfoByUid(String uid){
         return userInfoService.getUserInfoById(Integer.parseInt(uid));
     }
+
+    @RequestMapping("userInfo/getName")
+    public String getNameById(String uid){
+        return userInfoService.getUserName(Integer.parseInt(uid));
+    }
 }

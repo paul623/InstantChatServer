@@ -19,4 +19,7 @@ public interface UserInfoMapper {
 
     @Select("select * from userinfo where id=#{uid}")
     public UserInfo getUserInfoById(int uid);
+
+    @Select("select name from userinfo where id=#{uid}")
+    public String getUserNameById(int uid);
 }

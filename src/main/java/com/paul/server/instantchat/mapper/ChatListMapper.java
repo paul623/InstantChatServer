@@ -4,6 +4,7 @@ import com.paul.server.instantchat.entity.Chatlist;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.Date;
 import java.util.List;
@@ -15,4 +16,10 @@ public interface ChatListMapper {
 
     @Insert("insert into chatlist(content,sendId,receiveId,date,status) values(#{content},#{sendId},#{receiveId},#{date},#{status})")
     public int addChatList(String content, int sendId, int receiveId, Date date, int status);
+
+    @Select("SELECT * FROM chatlist where receiveId=#{uid} and status='1'")
+    public List<Chatlist> getNewMessage(int uid);
+
+    @Update("update chatlist set status='0' where id=#{id} ")
+    public int setChatListStatus(int id);
 }

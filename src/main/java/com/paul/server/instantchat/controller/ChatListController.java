@@ -23,4 +23,10 @@ public class ChatListController {
     public MessageBean sendMessage(String content, int sendId, int receiveId){
         return chatListService.addChatList(content, sendId, receiveId);
     }
+
+    @RequestMapping("chat/checkNewMessage")
+    public MessageBean checkForNewMessage(int uid){
+        return chatListService.getNewMessage(uid);
+    }
+
 }
