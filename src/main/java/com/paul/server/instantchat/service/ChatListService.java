@@ -19,7 +19,7 @@ public class ChatListService {
     }
 
     public MessageBean addChatList(String content, int sendId, int receiveId){
-        int result=chatListMapper.addChatList(content,sendId,receiveId,new Date(),0);
+        int result=chatListMapper.addChatList(content,sendId,receiveId,new Date(),1);
         if(result==0){
             return new MessageBean(0,"发送失败",content);
         }else {
