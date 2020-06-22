@@ -30,7 +30,7 @@ public class UserService {
                 if(password.equals(user.getPassword())){
                     int i=userMapper.updateLoginDate(phoneNumber,new Date());
                     if(i==1){
-                        return new MessageBean(1,"登录成功！",user);
+                        return new MessageBean(1,"登陆成功",user);
                     }else {
                         return new MessageBean(0,"更新账户状态失败，请重试",null);
                     }
