@@ -22,4 +22,6 @@ public interface UserInfoMapper {
 
     @Select("select name from userinfo where id=#{uid}")
     public String getUserNameById(int uid);
+
+
 }

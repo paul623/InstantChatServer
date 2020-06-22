@@ -32,5 +32,13 @@ public class FriendController {
         }
 
     }
+    @RequestMapping("friend/deleteFriend")
+    public MessageBean deleteFriend(String uid,String fid){
+        try {
+            return friendService.deleteFriends(Integer.parseInt(uid),Integer.parseInt(fid));
+        }catch (Exception e){
+            return new MessageBean(0,"解析失败"+e,null);
+        }
+    }
 
 }

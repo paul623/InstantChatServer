@@ -33,4 +33,16 @@ public class FriendService {
         friendMapper.addFriend(friendId,userId,userInfoMapper.getUserInfoById(userId).getName(),new Date());
         return new MessageBean(1,"成功！",getFriendList(userId));
     }
+
+    public MessageBean deleteFriends(int userId,int friendId){
+        if(friendMapper.deleteFriend(userId,friendId)==1){
+            if(friendMapper.deleteFriend(friendId,userId)==1){
+                return new MessageBean(1,"删除成功！",null);
+            }else {
+                return new MessageBean(0,"删除失败！",null);
+            }
+        }else {
+            return new MessageBean(0,"删除失败！",null);
+        }
+    }
 }
