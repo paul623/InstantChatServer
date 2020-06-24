@@ -14,7 +14,7 @@ public interface UserInfoMapper {
 
     @Insert("insert into userinfo values(#{id},#{name},#{sex},#{birth},#{sign},#{email})")
     public int addUserInfo(int id, String name, String sex, Date birth,String sign,String email);
-    @Update("update userinfo set name ={#name},sex=#{sex},birth=#{birth},sign=#{sign},email=#{email} where id=#{id}")
+    @Update("update userinfo set name=#{name},sex=#{sex},birth=#{birth},sign=#{sign},email=#{email} where id=#{id}")
     public int updateUserInfo(int id,String name,String sex,Date birth,String sign,String email);
 
     @Select("select * from userinfo where id=#{uid}")

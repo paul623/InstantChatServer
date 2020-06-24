@@ -20,6 +20,6 @@ public interface FriendMapper {
     @Select("select * from friend where userId=#{userId} and friendId=#{friendId}")
     public Friend getFriendByUFId(int userId,int friendId);
 
-    @Delete("delete from friend where where userId=#{userId} and friendId=#{friendId}")
+    @Delete("delete from friend where  userId=#{userId} and friendId=#{friendId}")
     public int deleteFriend(int userId, int friendId);
 }

@@ -19,4 +19,6 @@ public interface UserMapper {
     @Update("update user set loginDate = #{loginDate} where phoneNumber=#{phoneNumber}")
     public int updateLoginDate(String phoneNumber,Date loginDate);
 
+    @Update("update user set password = #{password} where id=#{uid}")
+    public int updatePassword(String password,String uid);
 }

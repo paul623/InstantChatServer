@@ -58,4 +58,13 @@ public class UserService {
             return new MessageBean(0,"注册失败，日期非法",null);
         }
     }
+
+    public MessageBean rePassword(String uid,String passwd){
+        int result=userMapper.updatePassword(passwd,uid);
+        if(result==0){
+            return new MessageBean(0,"修改失败！",null);
+        }else {
+            return new MessageBean(1,"修改成功！",null);
+        }
+    }
 }

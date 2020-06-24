@@ -27,7 +27,7 @@ public class UserInfoController {
     }
 
     @RequestMapping("userInfo/edit")
-    public MessageBean updateUserInfo(int id, String name, String sex, Date birth, String sign, String email){
+    public MessageBean updateUserInfo(int id, String name, String sex, String birth, String sign, String email){
         return userInfoService.updateUserInfo(id, name, sex, birth, sign, email);
     }
 }
