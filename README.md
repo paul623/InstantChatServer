@@ -74,6 +74,19 @@ code 代表注册成功或者失败，msg为提示信息
 注册失败，日期非法
 ```
 
+#### 修改密码
+
+请求接口：
+
+```java
+@PostMapping("user/rePasswd")
+    public MessageBean rePassWord(String uid,String password){
+        return userService.rePassword(uid,password);
+    }
+```
+
+
+
 ### 用户信息模块
 
 #### 获取用户信息
@@ -104,6 +117,17 @@ public String getNameById(String uid){
 
 ```
 晚风
+```
+
+#### 修改用户信息
+
+获取接口：
+
+```java
+@RequestMapping("userInfo/edit")\
+public MessageBean updateUserInfo(int id, String name, String sex, String birth, String sign, String email){
+        return userInfoService.updateUserInfo(id, name, sex, birth, sign, email);
+    }
 ```
 
 ### 好友模块
@@ -154,6 +178,23 @@ public MessageBean addFriend(String uid,String fid){
 返回格式仍为MessageBean形式
 ```
 
+#### 删除好友
+
+接口：
+
+```java
+@RequestMapping("friend/deleteFriend")
+   public MessageBean deleteFriend(String uid,String fid){
+       try {
+           return friendService.deleteFriends(Integer.parseInt(uid),Integer.parseInt(fid));
+       }catch (Exception e){
+           return new MessageBean(0,"解析失败"+e,null);
+       }
+   }
+```
+
+
+
 ### 聊天模块
 
 #### 获取聊天记录
@@ -198,4 +239,17 @@ public MessageBean checkForNewMessage(int uid){
 ```
 
 
+
+```
+Copyright 2020 Paul623. https://github.com/paul623
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+   http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+ limitations under the License.
+```
 
